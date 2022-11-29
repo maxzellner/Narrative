@@ -10,7 +10,11 @@ namespace MonoGui.Core.GUI
 {
     public static class GUI
     {
-        
+        public static class Theme
+        {
+            public static Color Foreground = Color.Teal;
+            public static Color Background = Color.Salmon;
+        }
 
 
         

@@ -13,8 +13,9 @@ namespace MonoGui.Core.Screens
     {
         public TestScreen()
         {
-            root.Add(new GUIRectangle(10, 10, 60, 60, Color.Red));
-            root.Add(new GUILabel(0,0,100,100,"foobar", 0.5f, Color.Azure));
+            root.Add(new GUIRectangle(100, 100, 400, 400, Color.Red));
+            root.Add(new GUILabel(100, 100, 400, 400,"foobar", Alignment.Center, 1f, Color.Azure));
+            
             root.Add(new GUILine(new Vector2(100,100),new Vector2(200,300), Color.BlueViolet, 5.0f));
         }
         
