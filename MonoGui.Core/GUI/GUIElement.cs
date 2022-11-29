@@ -14,8 +14,8 @@ namespace MonoGui.Core.GUI
 
         public bool Visible { get; set; }
 
-        public event EventHandler<EventArgs> DrawOrderChanged;
-        public event EventHandler<EventArgs> VisibleChanged;
+        //public event EventHandler<EventArgs> DrawOrderChanged;
+        //public event EventHandler<EventArgs> VisibleChanged;
 
         public virtual void Update(GameTime gameTime)
         {

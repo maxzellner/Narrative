@@ -8,8 +8,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGui.Core.GUI
 {
-    public class GUI
+    public static class GUI
     {
+        
+
+
         
     }
 }

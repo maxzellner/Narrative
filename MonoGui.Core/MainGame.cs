@@ -11,13 +11,15 @@ namespace MonoGui.Core;
 public class MainGame : Game
 {
     public static GraphicsDeviceManager Graphics { get; private set; }
-    public static SpriteBatch SpriteBatch;
+    public static SpriteBatch SpriteBatch { get; private set; }
+    public static MainGame Instance { get; private set; }
 
     public MainGame()
     {
         Graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        Instance = this;
     }
 
     protected override void Initialize()
@@ -47,7 +49,7 @@ public class MainGame : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(Color.Black);
 
         SpriteBatch.Begin();
 

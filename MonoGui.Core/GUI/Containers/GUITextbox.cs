@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGui.Core.Managers;
+using MonoGui.Core.GUI.Elements;
 
-namespace MonoGui.Core.GUI.Elements
+namespace MonoGui.Core.GUI
 {
-    public class GUIRectangle : GUIElement
+    public class GUITextbox : GUIContainer
     {
         public int X;
         public int Y;
@@ -17,13 +18,16 @@ namespace MonoGui.Core.GUI.Elements
         public int H;
         public Color Color;
 
-        public GUIRectangle(int x, int y, int w, int h, Color color)
+        public GUITextbox(int x, int y, int w, int h, Color color)
         {
             this.X = x;
             this.Y = y;
             this.W = w;
             this.H = h;
             this.Color = color;
+
+            this.Add(new GUIRectangle(100,100,400,100, Color));
+            
         }
 
         public override void Update(GameTime gameTime)
@@ -33,7 +37,7 @@ namespace MonoGui.Core.GUI.Elements
 
         public override void Draw(GameTime gameTime)
         {
-            MainGame.SpriteBatch.Draw(TextureManager.MetaPixel, new Rectangle(X, Y, W, H), Color);
+            //MainGame.SpriteBatch.Draw(TextureManager.MetaPixel, new Rectangle(X, Y, W, H), Color);
             base.Draw(gameTime);
         }
     }

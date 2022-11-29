@@ -12,7 +12,8 @@ namespace MonoGui.Core.Screens
     {
         public TestScreen()
         {
-            _guiContainer.Add(new GUIRectangle(10, 10, 20, 20, Color.Red));
+            _guiContainer.Add(new GUIRectangle(10, 10, 400, 200, Color.Red));
+            _guiContainer.Add(new GUILabel(0,0,100,100,"foobar", 0.5f, Color.Azure));
         }
         
         public override void Update(GameTime gameTime)

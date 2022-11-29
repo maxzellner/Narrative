@@ -10,12 +10,15 @@ namespace MonoGui.Core.Managers
 {
     public static class TextureManager
     {
-        public static Texture2D WhitePixel { get; set; }
+        public static Texture2D MetaPixel { get; private set; }
+        public static SpriteFont MetaFont { get; private set; }
 
         public static void Init()
         {
-            WhitePixel = new Texture2D(MainGame.Graphics.GraphicsDevice, 1, 1); 
-            WhitePixel.SetData(new [] { Color.White });
+            MetaPixel = new Texture2D(MainGame.Graphics.GraphicsDevice, 1, 1); 
+            MetaPixel.SetData(new [] { Color.White });
+
+            MetaFont = MainGame.Instance.Content.Load<SpriteFont>("MetaFont_24px");
         }
     }
 }

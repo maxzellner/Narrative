@@ -8,38 +8,38 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGui.Core.GUI
 {
-    public class GUIContainer
+    public class GUIContainer : GUIElement
     {
         
-        public Stack<GUIElement> Children { get; private set; }
+        public Queue<GUIElement> Children { get; private set; }
 
         public GUIContainer() 
         {
-            Children = new Stack<GUIElement>();
+            Children = new Queue<GUIElement>();
         }
 
         public GUIContainer(params GUIElement[] guiElements)
         {
             foreach (GUIElement guiElement in guiElements)
             {
-                Children.Push(guiElement);
+                Children.Enqueue(guiElement);
             }
         }
 
         public void Add(GUIElement guiElement) 
         {
-            Children.Push(guiElement);
+            Children.Enqueue(guiElement);
         }
 
 
-        public void Update(GameTime gameTime) 
+        public override void Update(GameTime gameTime) 
         {
             foreach (GUIElement guiElement in Children)
             {
                 guiElement.Update(gameTime);
             }
         }
-        public void Draw(GameTime gameTime) 
+        public override void Draw(GameTime gameTime) 
         {
             foreach (GUIElement guiElement in Children)
             {
