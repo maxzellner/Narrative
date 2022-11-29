@@ -26,6 +26,7 @@ public class MainGame : Game
     {
         TextureManager.Init();
         ScreenManager.Add(new TestScreen());
+        ScreenManager.Add(new MainMenuScreen());
 
         base.Initialize();
     }

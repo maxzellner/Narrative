@@ -15,17 +15,35 @@ namespace MonoGui.Core.GUI.Elements
         public string Text { get; set; }
         public Alignment Alignment { get; set; }
         public float Scale { get; set; }
-        public Color Color { get; set; }
+        public Color TextColor { get; set; }
+
+        public bool FillBounds { get; set; }
+        public Color FillColor { get; set; }
+
 
         public Vector2 Position { get; private set; }
         private Vector2 origin;
-        public GUILabel(int x, int y, int w, int h, string text, Alignment alignment, float scale, Color color)
+        
+
+        public GUILabel(
+            int x,
+            int y,
+            int w,
+            int h,
+            string text,
+            Alignment alignment,
+            float scale,
+            Color textColor,
+            bool fillBounds = false,
+            Color? fillColor = null)
         {
             this.Bounds = new Rectangle(x, y, w, h);
             this.Text = text;
             this.Alignment = alignment;
             this.Scale = scale;
-            this.Color = color;    
+            this.TextColor = textColor;   
+            this.FillBounds = fillBounds;
+            this.FillColor = fillColor ?? Color.Magenta; 
             
             SetPosition();        
         }
@@ -37,17 +55,22 @@ namespace MonoGui.Core.GUI.Elements
 
         public override void Draw(GameTime gameTime)
         {
+            if (this.FillBounds)
+            {
+                MainGame.SpriteBatch.Draw(TextureManager.Pixel, Bounds, FillColor);
+            }
+
             MainGame.SpriteBatch.DrawString(
                 TextureManager.MetaFont,
                 Text,
                 Position,
-                Color,
+                TextColor,
                 0,
                 origin,
                 Scale,
                 SpriteEffects.None,
-                0.0f);
-
+                1.0f);
+            // MainGame.SpriteBatch.DrawString()
             base.Draw(gameTime);
         }
 
