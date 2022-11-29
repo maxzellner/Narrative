@@ -33,7 +33,7 @@ namespace MonoGui.Core.GUI.Elements
 
         public override void Draw(GameTime gameTime)
         {
-            MainGame.SpriteBatch.Draw(TextureManager.MetaPixel, new Rectangle(X, Y, W, H), Color);
+            MainGame.SpriteBatch.Draw(TextureManager.Pixel, new Rectangle(X, Y, W, H), Color);
             base.Draw(gameTime);
         }
     }

@@ -16,6 +16,7 @@ namespace MonoGui.Core.GUI.Elements
         public int W { get; set; }
         public int H { get; set; }
         public string Text { get; set; }
+        public Alignment Alignment { get; set; }
         public float Scale { get; set; }
         public Color Color { get; set; }
 
