@@ -17,6 +17,8 @@ public class MainGame : Game
     public MainGame()
     {
         Graphics = new GraphicsDeviceManager(this);
+        Graphics.PreferredBackBufferHeight = 900;
+        Graphics.PreferredBackBufferWidth  = 1600;
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
         Instance = this;

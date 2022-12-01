@@ -80,17 +80,51 @@ namespace MonoGui.Core.GUI.Elements
             Position = Bounds.Center.ToVector2();
             origin = size*0.5f;
 
-            if ( Alignment.HasFlag( Alignment.Left ) )
-                origin.X += Bounds.Width/2 - size.X/2;
+            // if ( Alignment.HasFlag( Alignment.Left ) )
+            //     origin.X += Bounds.Width/2 - size.X/2;
 
-            if ( Alignment.HasFlag( Alignment.Right ) )
-                origin.X -= Bounds.Width/2 - size.X/2;
+            // if ( Alignment.HasFlag( Alignment.Right ) )
+            //     origin.X -= Bounds.Width/2 - size.X/2;
 
-            if ( Alignment.HasFlag( Alignment.Top ) )
-                origin.Y += Bounds.Height/2 - size.Y/2;
+            // if ( Alignment.HasFlag( Alignment.Top ) )
+            //     origin.Y += Bounds.Height/2 - size.Y/2;
 
-            if ( Alignment.HasFlag( Alignment.Bottom ) )
-                origin.Y -= Bounds.Height/2 - size.Y/2;
+            // if ( Alignment.HasFlag( Alignment.Bottom ) )
+            //     origin.Y -= Bounds.Height/2 - size.Y/2;
+
+            switch (Alignment)
+            {
+                case Alignment.TopLeft : 
+                    origin.Y += Bounds.Height/2 - size.Y/2;
+                    origin.X += Bounds.Width/2 - size.X/2;
+                    break;
+                case Alignment.TopCenter :
+                    origin.Y += Bounds.Height/2 - size.Y/2;
+                    break;
+                case  Alignment.TopRight : 
+                    origin.Y += Bounds.Height/2 - size.Y/2;
+                    origin.X -= Bounds.Width/2 - size.X/2;
+                    break;
+                case  Alignment.MiddleLeft :
+                    origin.X += Bounds.Width/2 - size.X/2;
+                    break;
+                case Alignment.MiddleCenter : 
+                    break;
+                case Alignment.MiddleRight : 
+                    origin.X -= Bounds.Width/2 - size.X/2; 
+                    break;
+                case Alignment.BottomLeft : 
+                    origin.Y -= Bounds.Height/2 - size.Y/2;
+                    origin.X += Bounds.Width/2 - size.X/2;
+                    break;
+                case Alignment.BottomCenter : 
+                    origin.Y -= Bounds.Height/2 - size.Y/2;
+                    break;
+                case Alignment.BottomRight : 
+                    origin.Y -= Bounds.Height/2 - size.Y/2;
+                    origin.X -= Bounds.Width/2 - size.X/2;
+                    break;
+            }
         }
     }
 }

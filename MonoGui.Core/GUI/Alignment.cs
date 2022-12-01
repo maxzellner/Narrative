@@ -1,11 +1,22 @@
 namespace MonoGui.Core.GUI
 {
     public enum Alignment
-    {
-        Center = 0, 
-        Left = 1, 
-        Right = 2, 
-        Top = 4, 
-        Bottom = 8
+    {        
+        //         left    center   right
+        //    top
+        //
+        //  middle
+        //
+        //  bottom
+        
+        TopLeft,
+        TopCenter,
+        TopRight,
+        MiddleLeft,
+        MiddleCenter,
+        MiddleRight,
+        BottomLeft,
+        BottomCenter,
+        BottomRight
     }
 }
