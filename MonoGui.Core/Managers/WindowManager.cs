@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MonoGui.Core.Managers
 {
-    public class WindowManager
+    public static class WindowManager
     {
         
     }
