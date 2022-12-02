@@ -10,6 +10,7 @@ namespace MonoGui.Core.Screens
 {
     public class MainMenuScreen : Screen
     {
+        Camera camera = new Camera(MainGame.Graphics.GraphicsDevice.Viewport);
         public MainMenuScreen()
         {
             root.Add(new GUILabel(10, 10, 300, 150, "TopLeft", Alignment.TopLeft, 1.0f, Color.BlueViolet, true, Color.DarkGoldenrod));
@@ -27,6 +28,8 @@ namespace MonoGui.Core.Screens
 
         public override void Update(GameTime gameTime)
         {
+            
+            
             base.Update(gameTime);
         }
         
