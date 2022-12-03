@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace MonoGui.Core.Managers
 {
-    public static class WindowManager
+    public class SettingsManager
     {
-        private static MainGame mainGame = MainGame.Instance;
+        
     }
 }

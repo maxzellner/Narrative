@@ -13,6 +13,7 @@ public class MainGame : Game
     public static GraphicsDeviceManager Graphics { get; private set; }
     public static SpriteBatch SpriteBatch { get; private set; }
     public static MainGame Instance { get; private set; }
+    public static Camera Camera { get; private set; }
 
     public MainGame()
     {
@@ -31,6 +32,8 @@ public class MainGame : Game
         ScreenManager.Add(new MainMenuScreen());
 
         base.Initialize();
+
+        Camera = new Camera(Graphics.GraphicsDevice.Viewport);
     }
 
     protected override void LoadContent()
@@ -45,6 +48,8 @@ public class MainGame : Game
         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
+        Camera.UpdateCamera(Graphics.GraphicsDevice.Viewport);
+
         ScreenManager.Update(gameTime);
 
         base.Update(gameTime);
@@ -54,8 +59,8 @@ public class MainGame : Game
     {
         GraphicsDevice.Clear(Color.Black);
 
-        SpriteBatch.Begin();
-
+        SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, Camera.Transform);
+        
         ScreenManager.Draw(gameTime);
 
         SpriteBatch.End();
