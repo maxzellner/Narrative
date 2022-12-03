@@ -29,11 +29,11 @@ public class MainGame : Game
     {
         TextureManager.Init();
         ScreenManager.Add(new TestScreen());
-        ScreenManager.Add(new MainMenuScreen());
+        //ScreenManager.Add(new MainMenuScreen());
 
         base.Initialize();
 
-        Camera = new Camera(Graphics.GraphicsDevice.Viewport);
+        Camera = new Camera();
     }
 
     protected override void LoadContent()
@@ -48,7 +48,7 @@ public class MainGame : Game
         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        Camera.UpdateCamera(Graphics.GraphicsDevice.Viewport);
+        Camera.Update();
 
         ScreenManager.Update(gameTime);
 

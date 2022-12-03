@@ -22,11 +22,11 @@ namespace MonoGui.Core
 
         private float currentMouseWheelValue, previousMouseWheelValue, zoom, previousZoom;
 
-        public Camera(Viewport viewport)
+        public Camera()
         {
-            Bounds = viewport.Bounds;
+            Bounds = MainGame.Graphics.GraphicsDevice.Viewport.Bounds;
             Zoom = 1f;
-            Position = Vector2.Zero;
+            Position = new Vector2(MainGame.Graphics.PreferredBackBufferWidth/2,MainGame.Graphics.PreferredBackBufferHeight/2);
         }
 
 
@@ -75,9 +75,9 @@ namespace MonoGui.Core
             }
         }
 
-        public void UpdateCamera(Viewport bounds)
+        public void Update()
         {
-            Bounds = bounds.Bounds;
+            Bounds = MainGame.Graphics.GraphicsDevice.Viewport.Bounds;
             UpdateMatrix();
 
             Vector2 cameraMovement = Vector2.Zero;
