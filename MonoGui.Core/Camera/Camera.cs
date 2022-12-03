@@ -12,17 +12,17 @@ namespace MonoGui.Core
     /// Camera
     /// https://community.monogame.net/t/simple-2d-camera/9135
     /// </summary>
-    public class Camera
+    public static class Camera
     {
-        public float Zoom { get; set; }
-        public Vector2 Position { get; set; }
-        public Rectangle Bounds { get; protected set; }
-        public Rectangle VisibleArea { get; protected set; }
-        public Matrix Transform { get; protected set; }
+        public static float Zoom { get; set; }
+        public static Vector2 Position { get; set; }
+        public static Rectangle Bounds { get; private set; }
+        public static Rectangle VisibleArea { get; private set; }
+        public static Matrix Transform { get; private set; }
 
-        private float currentMouseWheelValue, previousMouseWheelValue, zoom, previousZoom;
+        private static float currentMouseWheelValue, previousMouseWheelValue, zoom, previousZoom;
 
-        public Camera()
+        public static void Init()
         {
             Bounds = MainGame.Graphics.GraphicsDevice.Viewport.Bounds;
             Zoom = 1f;
@@ -30,7 +30,7 @@ namespace MonoGui.Core
         }
 
 
-        private void UpdateVisibleArea()
+        private static void UpdateVisibleArea()
         {
             var inverseViewMatrix = Matrix.Invert(Transform);
 
@@ -48,7 +48,7 @@ namespace MonoGui.Core
             VisibleArea = new Rectangle((int)min.X, (int)min.Y, (int)(max.X - min.X), (int)(max.Y - min.Y));
         }
 
-        private void UpdateMatrix()
+        private static void UpdateMatrix()
         {
             Transform = Matrix.CreateTranslation(new Vector3(-Position.X, -Position.Y, 0)) *
                     Matrix.CreateScale(Zoom) *
@@ -56,13 +56,13 @@ namespace MonoGui.Core
             UpdateVisibleArea();
         }
 
-        public void MoveCamera(Vector2 movePosition)
+        public static void MoveCamera(Vector2 movePosition)
         {
             Vector2 newPosition = Position + movePosition;
             Position = newPosition;
         }
 
-        public void AdjustZoom(float zoomAmount)
+        public static void AdjustZoom(float zoomAmount)
         {
             Zoom += zoomAmount;
             if (Zoom < .35f)
@@ -75,7 +75,7 @@ namespace MonoGui.Core
             }
         }
 
-        public void Update()
+        public static void Update()
         {
             Bounds = MainGame.Graphics.GraphicsDevice.Viewport.Bounds;
             UpdateMatrix();

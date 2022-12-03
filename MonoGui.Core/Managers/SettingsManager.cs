@@ -5,8 +5,20 @@ using System.Threading.Tasks;
 
 namespace MonoGui.Core.Managers
 {
-    public class SettingsManager
+    public static class SettingsManager
     {
-        
+        public static void Init()
+        {
+            WindowManager.Init();
+        }
+
+        public static void Load()
+        {
+
+        }
+        public static void Save()
+        {
+
+        }
     }
 }

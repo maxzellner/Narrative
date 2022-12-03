@@ -4,8 +4,6 @@ using Microsoft.Xna.Framework.Input;
 using MonoGui.Core.GUI;
 using MonoGui.Core.Managers;
 using MonoGui.Core.Screens;
-using MonoGui.Core.Settings;
-
 namespace MonoGui.Core;
 
 public class MainGame : Game
@@ -13,7 +11,6 @@ public class MainGame : Game
     public static GraphicsDeviceManager Graphics { get; private set; }
     public static SpriteBatch SpriteBatch { get; private set; }
     public static MainGame Instance { get; private set; }
-    public static Camera Camera { get; private set; }
 
     public MainGame()
     {
@@ -28,12 +25,15 @@ public class MainGame : Game
     protected override void Initialize()
     {
         TextureManager.Init();
+        SettingsManager.Init();
+
+        Camera.Init();
+        
         ScreenManager.Add(new TestScreen());
         //ScreenManager.Add(new MainMenuScreen());
 
         base.Initialize();
 
-        Camera = new Camera();
     }
 
     protected override void LoadContent()
