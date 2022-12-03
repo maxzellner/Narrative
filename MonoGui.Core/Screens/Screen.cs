@@ -12,16 +12,16 @@ namespace MonoGui.Core.Screens
 {
     public abstract class Screen
     {
-        private protected GUIContainer root = new GUIContainer();
+        private protected GUIContainer gui = new GUIContainer();
 
         public virtual void Update(GameTime gameTime)
         {
-            root.Update(gameTime);
+            gui.Update(gameTime);
         }
 
         public virtual void Draw(GameTime gameTime)
         {
-            root.Draw(gameTime);
+            gui.Draw(gameTime);
         }
     }
 }

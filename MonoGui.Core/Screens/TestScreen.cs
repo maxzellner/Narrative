@@ -13,10 +13,10 @@ namespace MonoGui.Core.Screens
     {
         public TestScreen()
         {
-            root.Add(new GUIRectangle(100, 100, 400, 400, Color.Red));
-            root.Add(new GUILabel(100, 100, 400, 400,"foobar", Alignment.MiddleCenter, 1f, Color.Azure));
+            gui.Add(new GUIRectangle(100, 100, 400, 400, Color.Red));
+            gui.Add(new GUILabel(100, 100, 400, 400,"foobar", Alignment.MiddleCenter, 1f, Color.Azure));
             
-            root.Add(new GUILine(new Vector2(100,100),new Vector2(200,300), Color.BlueViolet, 5.0f));
+            gui.Add(new GUILine(new Vector2(100,100),new Vector2(200,300), Color.BlueViolet, 5.0f));
         }
         
         public override void Update(GameTime gameTime)

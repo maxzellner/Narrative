@@ -8,6 +8,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGui.Core
 {
+    /// <summary>
+    /// Camera
+    /// https://community.monogame.net/t/simple-2d-camera/9135
+    /// </summary>
     public class Camera
     {
         public float Zoom { get; set; }
