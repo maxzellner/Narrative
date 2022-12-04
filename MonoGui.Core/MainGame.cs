@@ -9,7 +9,8 @@ namespace MonoGui.Core;
 public class MainGame : Game
 {
     public static GraphicsDeviceManager Graphics { get; private set; }
-    public static SpriteBatch SpriteBatch { get; private set; }
+    public static SpriteBatch SpriteBatchGame { get; private set; }
+    public static SpriteBatch SpriteBatchUI { get; private set; }
     public static MainGame Instance { get; private set; }
 
     public MainGame()
@@ -29,24 +30,25 @@ public class MainGame : Game
 
         Camera.Init();
         
-        ScreenManager.Add(new TestScreen());
-        //ScreenManager.Add(new MainMenuScreen());
-
         base.Initialize();
-
     }
 
     protected override void LoadContent()
     {
-        SpriteBatch = new SpriteBatch(GraphicsDevice);
+        SpriteBatchGame = new SpriteBatch(GraphicsDevice);
+        SpriteBatchUI = new SpriteBatch(GraphicsDevice);
 
-        // TODO: use this.Content to load your game content here
+
+        ScreenManager.Push(new TestScreen(SpriteBatchGame));
+        //ScreenManager.Push(new MainMenuScreen(SpriteBatchGame));
     }
 
     protected override void Update(GameTime gameTime)
     {
         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
+
+        InputManager.Update();
 
         Camera.Update();
 
@@ -59,11 +61,13 @@ public class MainGame : Game
     {
         GraphicsDevice.Clear(Color.Black);
 
-        SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, Camera.Transform);
-        
-        ScreenManager.Draw(gameTime);
+        SpriteBatchGame.Begin(SpriteSortMode.Deferred, null, null, null, null, null, Camera.Transform);
+        SpriteBatchUI.Begin();
 
-        SpriteBatch.End();
+        ScreenManager.Draw();
+
+        SpriteBatchGame.End();
+        SpriteBatchUI.End();
 
         base.Draw(gameTime);
     }

@@ -50,17 +50,16 @@ namespace MonoGui.Core.GUI.Elements
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
         }
 
-        public override void Draw(GameTime gameTime)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (this.FillBounds)
             {
-                MainGame.SpriteBatch.Draw(TextureManager.Pixel, Bounds, FillColor);
+                spriteBatch.Draw(TextureManager.Pixel, Bounds, FillColor);
             }
 
-            MainGame.SpriteBatch.DrawString(
+            spriteBatch.DrawString(
                 TextureManager.MetaFont,
                 Text,
                 Position,
@@ -71,7 +70,6 @@ namespace MonoGui.Core.GUI.Elements
                 SpriteEffects.None,
                 1.0f);
             // MainGame.SpriteBatch.DrawString()
-            base.Draw(gameTime);
         }
 
         private void SetPosition()

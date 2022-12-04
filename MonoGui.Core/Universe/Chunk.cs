@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace MonoGui.Core.Realm
+namespace MonoGui.Core.Universe
 {
     public class Chunk
     {
-        private List<Tile> tiles;
+        // private List<Tile> tiles;
 
         public bool Active;
 
@@ -22,12 +22,9 @@ namespace MonoGui.Core.Realm
 
         }
 
-        public void Draw(GameTime gameTime)
+        public void Draw()
         {
-            foreach (Tile tile in tiles)
-            {
-                tile.Draw(gameTime);
-            }
+
         }
     }
 }

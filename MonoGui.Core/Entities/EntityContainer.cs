@@ -8,12 +8,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGui.Core.Entities
 {
-    public class EntityContainer : Entity
+    public class EntityContainer
     {
+        SpriteBatch _spriteBatch;
         public Queue<Entity> Children { get; private set; }
 
-        public EntityContainer() 
+        public EntityContainer(SpriteBatch spriteBatch) 
         {
+            _spriteBatch = spriteBatch;
             Children = new Queue<Entity>();
         }
 
@@ -23,18 +25,18 @@ namespace MonoGui.Core.Entities
         }
 
 
-        public override void Update(GameTime gameTime) 
+        public void Update(GameTime gameTime) 
         {
             foreach (Entity entity in Children)
             {
                 entity.Update(gameTime);
             }
         }
-        public override void Draw(GameTime gameTime) 
+        public void Draw() 
         {
             foreach (Entity entity in Children)
             {
-                entity.Draw(gameTime);
+                entity.Draw(_spriteBatch);
             }
         }
     }

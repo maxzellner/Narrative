@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +11,30 @@ namespace MonoGui.Core.Screens
 {
     public static class ScreenManager
     {
-        public static Stack<Screen> Screens { get; } = new Stack<Screen>();
+        private static Stack<Screen> _screens { get; } = new Stack<Screen>();
 
-        public static void Add(Screen screen) 
+        public static void Push(Screen screen) 
         {
-            Screens.Push(screen);
+            _screens.Push(screen);
+        }
+
+        public static void Pop()
+        {
+            _screens.Pop();
+        }
+
+        public static Screen Peek()
+        {
+            return _screens.Peek();
         }
 
         public static void Update(GameTime gameTime) 
         {
-            Screens.Peek().Update(gameTime);
+            _screens.Peek().Update(gameTime);
         }
-        public static void Draw(GameTime gameTime) 
+        public static void Draw() 
         {
-            Screens.Peek().Draw(gameTime);
+            _screens.Peek().Draw();
         }
     }
 }

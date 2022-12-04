@@ -28,13 +28,11 @@ namespace MonoGui.Core.GUI.Elements
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
         }
 
-        public override void Draw(GameTime gameTime)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            MainGame.SpriteBatch.Draw(TextureManager.Pixel, new Rectangle(X, Y, W, H), Color);
-            base.Draw(gameTime);
+            spriteBatch.Draw(TextureManager.Pixel, new Rectangle(X, Y, W, H), Color);
         }
     }
 }

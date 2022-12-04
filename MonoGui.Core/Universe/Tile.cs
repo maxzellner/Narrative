@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGui.Core.Entities;
 using MonoGui.Core.Managers;
 
-namespace MonoGui.Core.Realm
+namespace MonoGui.Core.Universe
 {
     public class Tile
     {
-        public static int TileSize = 20;
+        public static int TileSize = 32;
         
         public int X, Y;
         public float Noise;
@@ -27,13 +27,13 @@ namespace MonoGui.Core.Realm
         {
 
         }
-        public void Draw(GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            MainGame.SpriteBatch.Draw(
+            spriteBatch.Draw(
                 TextureManager.Pixel, 
                 new Vector2(X * Tile.TileSize, Y * Tile.TileSize), 
-                new Rectangle(0, 0, 19, 19),
-                new Color(0, Noise, 0));
+                new Rectangle(0, 0, 32, 32),
+                Microsoft.Xna.Framework.Color.Lerp(Color.SkyBlue, Color.DarkGreen, Noise));
         }        
     }
 }

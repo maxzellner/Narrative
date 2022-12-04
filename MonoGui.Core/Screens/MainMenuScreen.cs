@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using MonoGui.Core.GUI;
 using MonoGui.Core.GUI.Elements;
 
@@ -10,7 +11,7 @@ namespace MonoGui.Core.Screens
 {
     public class MainMenuScreen : Screen
     {
-        public MainMenuScreen()
+        public MainMenuScreen(SpriteBatch spriteBatch) : base(spriteBatch)
         {
             gui.Add(new GUILabel(10, 10, 300, 150, "TopLeft", Alignment.TopLeft, 1.0f, Color.BlueViolet, true, Color.DarkGoldenrod));
             gui.Add(new GUILabel(320, 10, 300, 150, "TopCenter", Alignment.TopCenter, 1.0f, Color.BlueViolet, true, Color.DarkGoldenrod));
@@ -32,9 +33,9 @@ namespace MonoGui.Core.Screens
             base.Update(gameTime);
         }
         
-        public override void Draw(GameTime gameTime)
+        public override void Draw()
         {
-            base.Draw(gameTime);
+            base.Draw();
         }
     }
 }

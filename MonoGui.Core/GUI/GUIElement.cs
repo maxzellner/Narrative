@@ -8,22 +8,20 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGui.Core.GUI
 {
-    public abstract class GUIElement //: IDrawable
+    public abstract class GUIElement
     {
+        //private SpriteBatch spriteBatch;
+
         public int DrawOrder { get; set; }
 
         public bool Visible { get; set; }
 
-        //public event EventHandler<EventArgs> DrawOrderChanged;
-        //public event EventHandler<EventArgs> VisibleChanged;
+        // protected GUIElement(SpriteBatch parentSpriteBatch)
+        // {
+        //     spriteBatch = parentSpriteBatch;
+        // }
 
-        public virtual void Update(GameTime gameTime)
-        {
-            
-        }
-        public virtual void Draw(GameTime gameTime)
-        {
-            
-        }
+        public abstract void Update(GameTime gameTime);
+        public abstract void Draw(SpriteBatch spriteBatch);
     }
 }

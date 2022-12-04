@@ -4,36 +4,39 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 using MonoGui.Core.Managers;
 
 namespace MonoGui.Core.Entities
 {
     public class Player : Entity
     {
-        public Player()
+        private static float _movementSpeed = 500.0f;
+
+        public Player(Vector2 startingLocation)
         {
-            Position = new Vector2(20f,20f);
+            Position = startingLocation;
         }
 
         public override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                this.Position.Y -= 1f;
+                this.Position.Y -= _movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                this.Position.Y += 1f;
+                this.Position.Y += _movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
-                this.Position.X -= 1f;
+                this.Position.X -= _movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                this.Position.X += 1f;
-
+                this.Position.X += _movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
-        public override void Draw(GameTime gameTime)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            MainGame.SpriteBatch.Draw(
+            spriteBatch.Draw(
                 TextureManager.Pixel,
                 Position,
-                new Rectangle(0, 0, 10, 10),
+                new Rectangle(0, 0, 32, 32),
                 Color.Red);
+            spriteBatch.DrawString(TextureManager.MetaFont,"@",Position,Color.Black);
         }
     }
 }

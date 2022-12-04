@@ -32,14 +32,12 @@ namespace MonoGui.Core.GUI.Elements
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
         }
 
-        public override void Draw(GameTime gameTime)
+        public override void Draw(SpriteBatch spriteBatch)
         {
 
-            MainGame.SpriteBatch.Draw(TextureManager.Pixel, Origin, null, Color, Angle, new Vector2(0f, 0.5f), new Vector2(Distance, Thickness), SpriteEffects.None, 0);
-            base.Draw(gameTime);
+            spriteBatch.Draw(TextureManager.Pixel, Origin, null, Color, Angle, new Vector2(0f, 0.5f), new Vector2(Distance, Thickness), SpriteEffects.None, 0);
         }
     }
 }

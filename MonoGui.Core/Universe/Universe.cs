@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using MonoGui.Core.Entities;
 
-namespace MonoGui.Core.Realm
+namespace MonoGui.Core.Universe
 {
     public class Realm
     {
-        private Map map;
+        // private Map map;
         
         public Realm()
         {

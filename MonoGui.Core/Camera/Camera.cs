@@ -14,6 +14,8 @@ namespace MonoGui.Core
     /// </summary>
     public static class Camera
     {
+        private static float _minZoom = 2.0f;
+        private static float _maxZoom = 0.1f;
         public static float Zoom { get; set; }
         public static Vector2 Position { get; set; }
         public static Rectangle Bounds { get; private set; }
@@ -65,13 +67,13 @@ namespace MonoGui.Core
         public static void AdjustZoom(float zoomAmount)
         {
             Zoom += zoomAmount;
-            if (Zoom < .35f)
+            if (Zoom < _maxZoom)
             {
-                Zoom = .35f;
+                Zoom = _maxZoom;
             }
-            if (Zoom > 2f)
+            if (Zoom > _minZoom)
             {
-                Zoom = 2f;
+                Zoom = _minZoom;
             }
         }
 
