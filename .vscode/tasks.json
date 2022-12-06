@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/MonoGui.Core/MonoGui.Core.csproj",
+                "${workspaceFolder}/Narrative.Core/Narrative.Core.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/MonoGui.Core/MonoGui.Core.csproj",
+                "${workspaceFolder}/Narrative.Core/Narrative.Core.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/MonoGui.Core/MonoGui.Core.csproj"
+                "${workspaceFolder}/Narrative.Core/Narrative.Core.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

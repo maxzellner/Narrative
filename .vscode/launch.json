@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/MonoGui.Core/bin/Debug/net6.0/MonoGui.Core.dll",
+            "program": "${workspaceFolder}/Narrative.Core/bin/Debug/net6.0/Narrative.Core.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/MonoGui.Core",
+            "cwd": "${workspaceFolder}/Narrative.Core",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
