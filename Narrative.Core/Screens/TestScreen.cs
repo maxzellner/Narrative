@@ -36,6 +36,8 @@ namespace Narrative.Core.Screens
                 ScreenManager.Push(new SettingsScreen(MainGame.SpriteBatchUI));
             }
 
+            map.Update(gameTime);
+
             entities.Update(gameTime);
         }
         

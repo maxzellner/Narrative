@@ -14,18 +14,20 @@ namespace Narrative.Core.Universe
         public static int TileSize = 32;
         
         public int X, Y;
-        public float Noise;
+        public float Terrain;
+        public float ManaDensity;
 
-        public Tile(int x, int y, float noise)
+        public Tile(int x, int y, float terrain, float manaDensity)
         {
             this.X = x;
             this.Y = y;
-            this.Noise = noise;
+            this.Terrain = terrain;
+            this.ManaDensity = manaDensity;
         }
 
         public void Update(GameTime gameTime)
         {
-
+            this.ManaDensity = Generator.GetManaDensityNoise(X,Y,(float)gameTime.TotalGameTime.TotalSeconds * 100);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -33,7 +35,13 @@ namespace Narrative.Core.Universe
                 TextureManager.Pixel, 
                 new Vector2(X * Tile.TileSize, Y * Tile.TileSize), 
                 new Rectangle(0, 0, 32, 32),
-                Microsoft.Xna.Framework.Color.Lerp(Color.SkyBlue, Color.DarkGreen, Noise));
+                Microsoft.Xna.Framework.Color.Lerp(Color.SkyBlue, Color.DarkGreen, Terrain));
+            
+            spriteBatch.Draw(
+                TextureManager.Pixel, 
+                new Vector2(X * Tile.TileSize, Y * Tile.TileSize), 
+                new Rectangle(0, 0, 32, 32),
+                Microsoft.Xna.Framework.Color.Lerp(Color.BlueViolet, Color.Red, ManaDensity));
         }        
     }
 }

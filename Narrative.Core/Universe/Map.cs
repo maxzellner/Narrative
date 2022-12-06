@@ -33,6 +33,14 @@ namespace Narrative.Core.Universe
         {
             spriteBatch = rootSpriteBatch;
         }
+
+        public Tile this[int x, int y] 
+        {
+            get 
+            {
+                return tiles[x,y];
+            }
+        }
         
         public void GenerateMap(int x, int y)
         {
@@ -44,7 +52,10 @@ namespace Narrative.Core.Universe
 
         public void Update(GameTime gameTime)
         {
-
+            foreach (var tile in tiles)
+            {
+                tile.Update(gameTime);
+            }
         }
 
         public void Draw()
