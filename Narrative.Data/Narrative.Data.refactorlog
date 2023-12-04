@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="59de40d2-432d-4818-826a-cad854c4fb5b" ChangeDateTime="12/03/2023 21:52:06">
+    <Property Name="ElementName" Value="[dbo].[Map].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="x" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9c851425-fde7-4a63-a7f4-e0e5b25fcb6a" ChangeDateTime="12/03/2023 21:52:20">
+    <Property Name="ElementName" Value="[dbo].[Map].[x]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="X" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="08776237-f512-4cf0-88c0-a4ce177b374c" ChangeDateTime="12/03/2023 21:52:24">
+    <Property Name="ElementName" Value="[dbo].[Map].[y]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Y" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35cf632f-fbb1-4057-97e3-cfeab16a4af0" ChangeDateTime="12/03/2023 23:02:05">
+    <Property Name="ElementName" Value="[dbo].[Map].[t]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="50ddd6dc-1ce7-4940-9de0-373dd8d9b4df" ChangeDateTime="12/03/2023 23:02:07">
+    <Property Name="ElementName" Value="[dbo].[Map].[X]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="t" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bc061acc-f7e7-4aeb-ac41-7c777bdfbc57" ChangeDateTime="12/03/2023 23:02:09">
+    <Property Name="ElementName" Value="[dbo].[Map].[Y]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="X" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b053e25d-8e0f-4675-ba18-7beae3767829" ChangeDateTime="12/03/2023 23:02:12">
+    <Property Name="ElementName" Value="[dbo].[Map].[Terrain]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Y" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6da4ca3d-731f-4afe-a19f-c4917148ee4f" ChangeDateTime="12/03/2023 23:02:14">
+    <Property Name="ElementName" Value="[dbo].[Map].[Z]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="661383f6-1356-4e71-ac65-1950e3ed7250" ChangeDateTime="12/03/2023 23:02:18">
+    <Property Name="ElementName" Value="[dbo].[Map].[ManaDensity]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Z" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d36f6e3c-2a80-4d96-97a7-c90eab4e4035" ChangeDateTime="12/03/2023 23:02:24">
+    <Property Name="ElementName" Value="[dbo].[Map].[a]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Terrain" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a84d5244-9cb0-4727-b1d0-8869eb986872" ChangeDateTime="12/03/2023 23:02:30">
+    <Property Name="ElementName" Value="[dbo].[Map].[sd]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Map]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManaDensity" />
+  </Operation>
+</Operations>
